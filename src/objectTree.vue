@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <p v-if="showLeaf" @click="parent=!parent" class="alpaca-finger">{</p>
+  <div class="object-tree">
+    <p v-if="showLeaf" @click="parent=!parent" class="alpaca-finger">
+      { <span v-show="!parent">... }</span>
+    </p>
     <p class="alpaca-p" v-show="parent" v-for="(item, index) in data" :key="index">
       <slot v-if="isObject(item)">
         <p @click="toggle(index)" class="alpaca-finger">
@@ -27,7 +29,7 @@
         <span :class="getClass(item)" v-else>{{ isNullOrUndefined(item) }},</span>
       </slot>
     </p>
-    <p v-if="showLeaf">}</p>
+    <p v-if="showLeaf" v-show="parent">}</p>
   </div>
 </template>
 

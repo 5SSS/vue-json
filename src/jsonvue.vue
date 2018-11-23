@@ -36,6 +36,7 @@ export default {
     width: 100%;
     padding: 10px;
     color: #7c7d7d;
+    text-align: left;
     font-size: 14px;
     background-color: #f8f8f8;
     border-radius: 5px;

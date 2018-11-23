@@ -1,11 +1,12 @@
 <template>
-  <div>
-    <p v-if="showLeaf" @click="parent=!parent" class="alpaca-finger">[</p>
+  <div class="object-tree">
+    <p v-if="showLeaf" @click="parent=!parent" class="alpaca-finger">
+      [ <span v-show="!parent">... ]</span>
+    </p>
     <p class="alpaca-p" v-show="parent" v-for="(item, index) in data" :key="index">
       <slot v-if="isArray(item)">
         <p @click="toggle(index)" class="alpaca-finger">
-          [
-          <span v-show="!child[index]">... ]</span>
+          [ <span v-show="!child[index]">... ]</span>
         </p>
         <arrayself v-show="child[index]" :data="item" :showLeaf="false"></arrayself>
         <span v-show="child[index]" v-if="isLast(index)">]</span>
@@ -13,8 +14,7 @@
       </slot>
       <slot v-else-if="isObject(item)">
         <p @click="toggle(index)" class="alpaca-finger">
-          {
-            <span v-show="!child[index]">... }</span>
+          { <span v-show="!child[index]">... }</span>
         </p>
         <object-tree v-show="child[index]" :data="item" :showLeaf="false"></object-tree>
         <span v-show="child[index]" v-if="isLast(index)">}</span>
@@ -26,7 +26,7 @@
         <span :class="getClass(item)" v-else>{{ isNullOrUndefined(item) }},</span>
       </slot>
     </p>
-    <p v-if="showLeaf">]</p>
+    <p v-if="showLeaf" v-show="parent">]</p>
   </div>
 </template>
 
