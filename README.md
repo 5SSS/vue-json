@@ -30,6 +30,21 @@ import vueJsonCool from 'vue-json-cool'
 export default {
   components: {
     vueJsonCool
+  },
+  data () {
+  	return {
+  		jsonData: {
+  			number: 1,
+        string: 'hello world',
+        boolean: true,
+        object: {
+          key: 1
+        },
+        array: [1, '2', true, null, undefined],
+        null: null,
+        undefined: undefined
+  		}
+  	}
   }
 }
 ```
