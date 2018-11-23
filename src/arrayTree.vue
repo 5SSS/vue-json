@@ -57,7 +57,7 @@ export default {
     data (val) {
       this.child = {}
       this.data.forEach((item, index) => {
-        if (this.isObject(item) || this.isArray(item)) {
+        if (type.isObject(item) || type.isArray(item)) {
           this.$set(this.child, index, true)
         }
       })
@@ -65,17 +65,17 @@ export default {
   },
   created () {
     this.data.forEach((item, index) => {
-      if (this.isObject(item) || this.isArray(item)) {
+      if (type.isObject(item) || type.isArray(item)) {
         this.$set(this.child, index, true)
       }
     })
   },
   methods: {
     isArray (item) {
-      return Object.prototype.toString.call(item) === '[object Array]'
+      return type.isArray(item)
     },
     isObject (item) {
-      return Object.prototype.toString.call(item) === '[object Object]'
+      return type.isObject(item)
     },
     isLast (index) {
       return (this.data.length - 1) === index
