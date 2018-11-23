@@ -32,9 +32,9 @@ export default {
     vueJsonCool
   },
   data () {
-  	return {
-  		jsonData: {
-  			number: 1,
+    return {
+      jsonData: {
+        number: 1,
         string: 'hello world',
         boolean: true,
         object: {
@@ -43,8 +43,8 @@ export default {
         array: [1, '2', true, null, undefined],
         null: null,
         undefined: undefined
-  		}
-  	}
+      }
+    }
   }
 }
 ```
