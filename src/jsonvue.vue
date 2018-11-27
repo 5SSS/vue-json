@@ -1,9 +1,9 @@
 <template>
   <div class="alpaca-json">
-    <slot v-if="isObject(data)">
+    <slot v-if="isObject">
       <object-tree :data="data"></object-tree>
     </slot>
-    <slot v-else-if="isArray(data)">
+    <slot v-else-if="isArray">
       <array-tree :data="data"></array-tree>
     </slot>
     <slot v-else>{{ data || 'null' }}</slot>
@@ -20,12 +20,12 @@ export default {
     arrayTree
   },
   props: ['data'],
-  methods: {
-    isArray (item) {
-      return type.isArray(item)
+  computed: {
+    isArray () {
+      return type.isArray(this.data)
     },
-    isObject (item) {
-      return type.isObject(item)
+    isObject () {
+      return type.isObject(this.data)
     }
   }
 }
