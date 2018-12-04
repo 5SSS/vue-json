@@ -49,6 +49,12 @@ export default {
 }
 ```
 
+## Example
+
+![示例1](./img/json1.png)
+
+![示例2](./img/json2.png)
+
 ## Props
 
 | Attribute | Level | Description | Type | Default |

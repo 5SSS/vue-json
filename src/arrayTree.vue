@@ -6,7 +6,9 @@
     <p class="alpaca-p" v-show="parent" v-for="(item, index) in data" :key="index">
       <slot v-if="isArray(item)">
         <p @click="toggle(index)" class="alpaca-finger">
-          [ <span v-show="!child[index]">... ]</span>
+          [
+          <span v-show="!child[index]" v-if="isLast(index)">... ]</span>
+          <span v-show="!child[index]" v-else>... ],</span>
         </p>
         <arrayself v-show="child[index]" :data="item" :showLeaf="false"></arrayself>
         <span v-show="child[index]" v-if="isLast(index)">]</span>
@@ -14,7 +16,9 @@
       </slot>
       <slot v-else-if="isObject(item)">
         <p @click="toggle(index)" class="alpaca-finger">
-          { <span v-show="!child[index]">... }</span>
+          {
+          <span v-show="!child[index]" v-if="isLast(index)">... }</span>
+          <span v-show="!child[index]" v-else>... },</span>
         </p>
         <object-tree v-show="child[index]" :data="item" :showLeaf="false"></object-tree>
         <span v-show="child[index]" v-if="isLast(index)">}</span>

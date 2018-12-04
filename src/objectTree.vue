@@ -7,7 +7,8 @@
       <slot v-if="isObject(item)">
         <p @click="toggle(index)" class="alpaca-finger">
           {{ index }}: {
-          <span v-show="!child[index]">... }</span>
+          <span v-show="!child[index]" v-if="isLast(index)">... }</span>
+          <span v-show="!child[index]" v-else>... },</span>
         </p>
         <objectself v-show="child[index]" :data="item" :showLeaf="false"></objectself>
         <span v-show="child[index]" v-if="isLast(index)">}</span>
@@ -16,7 +17,8 @@
       <slot v-else-if="isArray(item)">
         <p @click="toggle(index)" class="alpaca-finger">
           {{ index }}: [
-          <span v-show="!child[index]">... ]</span>
+          <span v-show="!child[index]" v-if="isLast(index)">... ]</span>
+          <span v-show="!child[index]" v-else>... ],</span>
         </p>
         <arrayTree v-show="child[index]" :data="item" :showLeaf="false"></arrayTree>
         <span v-show="child[index]" v-if="isLast(index)">]</span>
