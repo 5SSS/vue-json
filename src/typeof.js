@@ -25,3 +25,10 @@ export const isBoolean = (item) => {
 export const isUndefined = (item) => {
   return typeof item === 'undefined'
 }
+
+export const type = (item) => {
+  let type = Object.prototype.toString.call(item)
+  let match = /(?!\[).+(?=\])/g
+  type = type.match(match)[0].split(' ')[1]
+  return type
+}
