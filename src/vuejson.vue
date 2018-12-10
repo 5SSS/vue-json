@@ -38,7 +38,6 @@ export default {
   },
   methods: {
     parsing () {
-      console.time('use')
       if (isObject(this.data)) {
         this.isObject = true
       } else if (isArray(this.data)) {
@@ -47,7 +46,6 @@ export default {
         this.isObject = false
       }
       this.parse = parseData(this.data)
-      console.timeEnd('use')
     }
   }
 }
