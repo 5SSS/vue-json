@@ -1,4 +1,4 @@
-import { isObject, isArray, type } from './typeof.js'
+import { isObject, isArray, isString, type } from './typeof.js'
 
 let _line = 1
 
@@ -36,7 +36,11 @@ const parseObject = (obj) => {
       } else if (obj[key] === undefined) {
         newObj.value = 'undefined'
       } else {
-        newObj.value = obj[key]
+        if (isString(obj[key])) {
+          newObj.value = '"' + obj[key] + '"'
+        } else {
+          newObj.value = obj[key]
+        }
       }
     }
     newData.push(newObj)
@@ -65,7 +69,11 @@ const parseArray = (arr) => {
       } else if (arr[i] === undefined) {
         newObj.value = 'undefined'
       } else {
-        newObj.value = arr[i]
+        if (isString(arr[i])) {
+          newObj.value = '"' + arr[i] + '"'
+        } else {
+          newObj.value = arr[i]
+        }
       }
     }
     newData.push(newObj)
