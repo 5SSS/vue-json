@@ -1,14 +1,17 @@
 <template>
   <div class="alpaca-json">
-    <p v-if="isObject" @click="parent=!parent" class="alpaca-f">
-      { <span v-show="!parent">... }</span>
-    </p>
-    <p v-else @click="parent=!parent" class="alpaca-f">
-      [ <span v-show="!parent">... ]</span>
-    </p>
-    <tree v-show="parent" :data="parse" :needKey="isObject"></tree>
-    <p v-if="isObject" v-show="parent">}</p>
-    <p v-else v-show="parent">]</p>
+    <slot v-if="canParse">
+      <p v-if="isObject" @click="parent=!parent" class="alpaca-f">
+        { <span v-show="!parent">... }</span>
+      </p>
+      <p v-else @click="parent=!parent" class="alpaca-f">
+        [ <span v-show="!parent">... ]</span>
+      </p>
+      <tree v-show="parent" :data="parse" :needKey="isObject"></tree>
+      <p v-if="isObject" v-show="parent">}</p>
+      <p v-else v-show="parent">]</p>
+    </slot>
+    <slot v-else>{{ data }}</slot>
   </div>
 </template>
 
@@ -34,6 +37,14 @@ export default {
   watch: {
     data (val) {
       this.parsing()
+    }
+  },
+  computed: {
+    canParse () {
+      if (isObject(this.data) || isArray(this.data)) {
+        return true
+      }
+      return false
     }
   },
   methods: {
