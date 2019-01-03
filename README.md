@@ -1,6 +1,6 @@
 # vue-json
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/leezng/vue-json-pretty/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/5SSS/vue-json)
 
 A JSON component or plugin for vue(2.x), support spread and shrinkage, The highlighted rendering JSON data as a tree structure.
 
