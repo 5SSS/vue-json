@@ -73,6 +73,7 @@ export default {
   }
   .alpaca-p {
     position: relative;
+    word-break: break-all;
   }
   .alpaca-line {
     position: absolute;

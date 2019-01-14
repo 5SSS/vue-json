@@ -1,6 +1,6 @@
 {
   "name": "vue-json-cool",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "a json plugin for vue,support spread and shrinkage",
   "main": "./index.js",
   "keywords": [
