@@ -11,7 +11,7 @@ A JSON component or plugin for vue(2.x), support spread and shrinkage, The highl
 ## Install
 
 ```js
-npm install --save vue-json-cool
+npm install vue-json-cool --save
 ```
 
 ## Usage
@@ -25,28 +25,28 @@ npm install --save vue-json-cool
 ```
 
 ```js
-import vueJsonCool from 'vue-json-cool'
+import vueJsonCool from 'vue-json-cool';
 
 export default {
   components: {
-    vueJsonCool
+    vueJsonCool,
   },
-  data () {
+  data() {
     return {
       jsonData: {
         number: 1,
         string: 'hello world',
         boolean: true,
         object: {
-          key: 1
+          key: 1,
         },
         array: [1, '2', true, null, undefined],
         null: null,
-        undefined: undefined
-      }
-    }
-  }
-}
+        undefined: undefined,
+      },
+    };
+  },
+};
 ```
 
 ## Example
@@ -57,9 +57,9 @@ export default {
 
 ## Props
 
-| Attribute | Level | Description | Type | Default |
-|-------- |-------- |-------- |-------- | -------- |
-| data | basic | json data | JSON object or object Array, {...}, [{...}, {...}] | - |
+| Attribute | Level | Description | Type                                               | Default |
+| --------- | ----- | ----------- | -------------------------------------------------- | ------- |
+| data      | basic | json data   | JSON object or object Array, {...}, [{...}, {...}] | -       |
 
 ## Events
 

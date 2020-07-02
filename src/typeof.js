@@ -1,34 +1,34 @@
 export const isArray = (item) => {
-  return Object.prototype.toString.call(item) === '[object Array]'
-}
+  return Object.prototype.toString.call(item) === '[object Array]';
+};
 
 export const isObject = (item) => {
-  return Object.prototype.toString.call(item) === '[object Object]'
-}
+  return Object.prototype.toString.call(item) === '[object Object]';
+};
 
 export const isNull = (item) => {
-  return Object.prototype.toString.call(item) === '[object Null]'
-}
+  return Object.prototype.toString.call(item) === '[object Null]';
+};
 
 export const isNumber = (item) => {
-  return typeof item === 'number'
-}
+  return typeof item === 'number';
+};
 
 export const isString = (item) => {
-  return typeof item === 'string'
-}
+  return typeof item === 'string';
+};
 
 export const isBoolean = (item) => {
-  return typeof item === 'boolean'
-}
+  return typeof item === 'boolean';
+};
 
 export const isUndefined = (item) => {
-  return typeof item === 'undefined'
-}
+  return typeof item === 'undefined';
+};
 
 export const type = (item) => {
-  let type = Object.prototype.toString.call(item)
-  let match = /(?!\[).+(?=\])/g
-  type = type.match(match)[0].split(' ')[1]
-  return type
-}
+  let type = Object.prototype.toString.call(item);
+  let match = /(?!\[).+(?=\])/g;
+  type = type.match(match)[0].split(' ')[1];
+  return type;
+};

@@ -1,2 +1,2 @@
-'use strict'
-module.exports = require('./src/vuejson.vue')
+'use strict';
+module.exports = require('./src/vuejson.vue');

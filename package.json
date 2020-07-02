@@ -1,11 +1,15 @@
 {
   "name": "vue-json-cool",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "a json plugin for vue,support spread and shrinkage",
   "main": "./index.js",
   "keywords": [
     "vue",
-    "json"
+    "json",
+    "table-view",
+    "json-view",
+    "view",
+    "viewer"
   ],
   "author": "alpaca",
   "license": "MIT"
